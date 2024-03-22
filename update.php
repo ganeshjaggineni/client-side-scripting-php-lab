@@ -1,36 +1,20 @@
 <?php
 include("db.php");
-include("links.html");
-$rno=$_GET["stureg"];
-$sql="SELECT * from student_details WHERE studregno='$rno'";
-$result=mysqli_query($conn,$sql);
-?>
-<center>
-<h1>UPDATE STUDENT(S) INFORMATION</h1>
-<form action="updt.php" name="updt" method="get">
-<table border="5">
-<tr>
-<th>Student Register Number :</th>
-<th>Student Name :</th>
-<th>Student Gender :</th>
-<th>Student DOB :</th>
-<th>Student Course:</th>
-<th>Operation </th>
-</tr>
-<tr>
-<?php
-while($row=mysqli_fetch_assoc($result))
+$hackid = $_POST['hacker_id'];
+$hackname = $_POST['hacker_name'];
+$hackdob = $_POST['hacker_dob'];
+$hackmobile = $_POST['hacker_mobile'];
+$hackemail = $_POST['hacker_email'];
+$hackskill = $_POST['hacker_skill'];
+$hackstatus = $_POST['hacker_status'];
+$query = "update hacker_info set hack_name='$hackname',hack_dob='$hackdob',hack_mobile='$hackmobile',hack_status='$hackstatus',hack_skills='$hackskill' where hack_id='$hackid' ";
+$res=mysqli_query($conn,$query);
+if($res)
 {
-?>
-<td><input type="text" value=<?php echo $row['studregno']; ?> name="rtf" /></td>
-<td><input type="text" value=<?php echo $row['studname']; ?> name="ntf" /></td>
-<td><input type="text" value=<?php echo $row['studgender']; ?> name="gtf" /></td>
-<td><input type="text" value=<?php echo $row['studdob']; ?> name="dtf" /></td>
-<td><input type="text" value=<?php echo $row['studcourse']; ?> name="ctf" / ></td>
-<td><input type="submit" value="Update" name="update" /></td>
-</tr>
-<?php
+    echo"updated succesfully";
+
+}
+else{
+    echo"not updated";
 }
 ?>
-</table>
-</center>
