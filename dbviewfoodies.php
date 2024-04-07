@@ -1,7 +1,7 @@
 <?php
 include("db.php");
-$uname = $_POST['fusername'];
-$query = "SELECT * FROM foodiesregistrations where username='$uname'";
+
+$query = "SELECT * FROM foodiesregistrations";
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
@@ -10,7 +10,6 @@ if (!$result) {
 ?>
 <center>
     <table border="5">
-        <form action="dbdelete.php" method="get">
         <tr>
             <th>User Name</th>
             <th>User dob</th>
@@ -24,25 +23,16 @@ if (!$result) {
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <tr>
-            <td><?php echo $row['username'] ?></td>
-
+                <td><?php echo $row['username'] ?></td>
                 <td><?php echo $row['userdob'] ?></td>
                 <td><?php echo $row['usergender'] ?></td>
                 <td><?php echo $row['useremail'] ?></td>
                 <td><?php echo $row['usermobile'] ?></td>
                 <td><?php echo $row['userfavfood'] ?></td>
                 <td><?php echo $row['useraddress'] ?></td>
-                <td>
-                    <form action="dbdelete.php" method="post">
-                        <input type="hidden" name="foodiename" value="<?php echo $row['username'] ?>">
-                        <input type="submit" value="Delete">
-                    </form>
-                </td>
-
             </tr>
         <?php
         }
         ?>
-        </form>
     </table>
 </center>

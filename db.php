@@ -1,15 +1,20 @@
 <?php
-$server_name = "localhost";
-$server_user = "root";
-$server_pwd = "";
-$db_name = "hacker";
 
-$conn=mysqli_connect($server_name,$server_user,$server_pwd,$db_name);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$servername = "localhost";
+$username = "root";
+$pwd = "";
+$dbname = "experiment";
+
+$conn = mysqli_connect($servername,$username,$pwd,$dbname);
 if(!$conn)
 {
-    die("connection failed:".mysqli_connect_error());
+    echo "cant connect to database :".mysqli_connect_error();
+
 }
-else{
-    echo"data based connected :".$db_name;
+else
+{    echo "database connected";
 }
+
 ?>

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <!-- <tittle>FOOD RESTURANT</tittle> -->
+    </head>
+    <body>
+        <center>
+        <h2>FOOD RESTURANT REGISTRATION PAGE</h2>
+        <form name="fuserregfrom" action="dbusersreg.php" method="POST">
+        <table border="0">
+            <tr>
+            <td>User Name : </td>
+            <td><input type="text" value="ganesh" name="fusername"></td>
+            </tr>
+
+
+                <tr>
+                    <td>User Dob : </td>
+                    <td><input type="date" value="2002-03-12" name="fuserdob"></td>
+                </tr>
+                <tr>
+                    <td>User Gender : </td>
+                    <td><input type="radio" value="male"  checked name="fusergender">male
+                        <input type="radio" value="female" name="fusergender">female
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td>User email : </td>
+                        <td><input type="email" value="ganesh@gmail.com" name="fuseremail"></td>
+                        </tr>
+                        <tr>
+                            <td>User mobile : </td>
+                            <td><input type="tel" value="7386878066" name="fusermob"></td>
+                            </tr>
+
+                            <tr>
+                                <td>User Favourite food: </td>
+                                <td>
+                                    <select value="select one" name="fuserfav">
+                                        <option value="chicken65">chicken65</option>
+                                        <option value="mutton haleem">mutton haleem</option>
+                                        <option value="payasam">payasam</option>
+                                        <option value="shawarma">shawarma</option>
+                                        <option value="yakitori">yakitori</option>
+                                    </select>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>User address : </td>
+                                    <td>
+                                      <textarea rows="4" cols="10" name="fuseraddress" >gpm</textarea>
+                                    </td>
+                                    </tr>
+
+
+
+                                        <!-- <tr>
+                                            <td>User Preference</td>
+                                            <td >
+                                                    <input type="checkbox" checked name="fuserpref" value="veg">vegeterian
+                                                    <input type="checkbox" name="fuserpref" value="nonveg">non vegeterian
+                                            </td>
+
+                                            </tr> -->
+
+                                            <tr>
+
+                                                <td colspan="2">
+                                                    <center>
+                                                        <input type="submit" value="submit"/>
+                                                    </center>
+                                                </td>
+
+                                                </tr>
+
+        </table>
+    </form>
+        </center>
+
+    </body>
+</html>
